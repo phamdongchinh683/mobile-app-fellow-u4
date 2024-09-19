@@ -2,12 +2,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "C/C++ Runner: Debug Session",
-      "type": "lldb",
+      "name": "Flutter",
       "request": "launch",
-      "args": [],
-      "cwd": "/Users/mac/Documents/flutter_mobile_app/windows/flutter",
-      "program": "/Users/mac/Documents/flutter_mobile_app/windows/flutter/build/Debug/outDebug"
+      "type": "dart",
+      "flutterMode": "debug"
     }
   ]
 }
