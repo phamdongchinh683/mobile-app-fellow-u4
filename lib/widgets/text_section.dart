@@ -13,7 +13,7 @@ class TextSection extends StatelessWidget {
       width: 252,
       height: 73,
       child: Text(description,
-          textAlign: TextAlign.center,
+          textAlign: TextAlign.start,
           style: const TextStyle(
               fontFamily: "SF Pro Display",
               fontSize: 16,

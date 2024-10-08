@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobile_app/widgets/button_auth.dart';
 import 'package:flutter_mobile_app/widgets/text_section.dart';
 import 'package:flutter_mobile_app/widgets/title_section.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -28,6 +29,12 @@ class _OnboardingScreen3State extends State<OnboardingScreen3> {
             const TextSection(
               description:
                   "Fellow4U helps you save time and get offers from hundreds of local guides that suit your trip.",
+            ),
+            const SizedBox(height: 25),
+            const ButtonAuth(
+              enabled: true,
+              value: "GET STARTED",
+              backgroundColor: Color.fromARGB(0, 217, 11, 104),
             ),
           ],
         ),

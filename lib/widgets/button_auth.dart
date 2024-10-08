@@ -20,7 +20,7 @@ class ButtonAuth extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(0, 14.0, 0, 14.0),
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
-          padding: const EdgeInsets.fromLTRB(160, 26.0, 160, 26.0),
+          padding: const EdgeInsets.fromLTRB(128, 27.0, 128, 26.0),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(6.0),
           ),

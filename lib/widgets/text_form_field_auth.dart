@@ -27,11 +27,6 @@ class TextFormFieldAuth extends StatelessWidget {
           decoration: InputDecoration(
             hintText: placeholder,
             hintStyle: const TextStyle(color: Color.fromRGBO(153, 153, 153, 1)),
-            // border: InputBorder.none,
-            // focusedBorder: InputBorder.none,
-            // enabledBorder: InputBorder.none,
-            // errorBorder: InputBorder.none,
-            // disabledBorder: InputBorder.none,
           ),
         ),
       ],
