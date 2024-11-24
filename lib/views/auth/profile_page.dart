@@ -1,27 +1,29 @@
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Profile')),
+      appBar: AppBar(title: const Text('Profile')),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            CircleAvatar(
+            const CircleAvatar(
               radius: 50,
               child: Icon(Icons.person, size: 50),
             ),
-            SizedBox(height: 20),
-            Text('Name: John Doe'),
-            Text('Email: johndoe@example.com'),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
+            const Text('Name: John Doe'),
+            const Text('Email: johndoe@example.com'),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/login');
               },
-              child: Text('Logout'),
+              child: const Text('Logout'),
             ),
           ],
         ),
