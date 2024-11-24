@@ -1,23 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobile_app/views/home/tab_view_introduce.dart';
+import 'package:flutter_mobile_app/views/auth/login_page.dart';
+import 'package:flutter_mobile_app/views/auth/profile_page.dart';
+import 'package:flutter_mobile_app/views/auth/signup_page.dart';
+import 'package:flutter_mobile_app/views/tour/book_tour_page.dart';
+import 'package:flutter_mobile_app/views/tour/tours_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
-    const String appTitle = 'Fellow4U';
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: appTitle,
-        theme: ThemeData(
-            textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(foregroundColor: const Color(0xFFF5F5F5)),
-        )),
-        home: const TabViewIntroduce());
+      debugShowCheckedModeBanner: false,
+      title: 'Tour Booking App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => LoginPage(),
+        '/signup': (context) => SignupPage(),
+        '/tours': (context) => ToursPage(),
+        '/book-tour': (context) => BookTourPage(),
+        '/profile': (context) => ProfilePage(),
+      },
+    );
   }
 }
