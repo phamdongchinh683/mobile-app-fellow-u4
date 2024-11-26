@@ -1,5 +1,8 @@
 import 'dart:convert';
 
+import 'package:cloudinary_flutter/image/cld_image.dart';
+import 'package:cloudinary_url_gen/transformation/resize/resize.dart';
+import 'package:cloudinary_url_gen/transformation/transformation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobile_app/config/secure_storage.dart';
 import 'package:http/http.dart' as http;
@@ -93,11 +96,11 @@ class TourCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final imageUrls = tour['images'] as List<dynamic>;
     final city = tour['city'];
+    final id = tour['_id'];
     final attractions = tour['attractions'];
     final priceAdult = tour['prices']['adult'];
     final priceChild = tour['prices']['child'];
     final days = tour['days'];
-
     return Card(
       elevation: 5,
       margin: const EdgeInsets.symmetric(vertical: 10),
@@ -109,18 +112,6 @@ class TourCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Images
-            if (imageUrls.isNotEmpty)
-              ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Image.network(
-                  imageUrls[0],
-                  width: double.infinity,
-                  height: 200,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            const SizedBox(height: 10),
             Row(
               children: [
                 const Icon(Icons.location_on, size: 20),
@@ -132,6 +123,12 @@ class TourCard extends StatelessWidget {
                     style: const TextStyle(fontWeight: FontWeight.bold)),
               ],
             ),
+            CldImageWidget(
+                publicId: 'sample.jpg',
+                transformation: Transformation()
+                  ..resize(Resize.crop()
+                    ..width(100)
+                    ..height(150))),
             const SizedBox(height: 8),
             Text(
               'Attractions: $attractions',
@@ -168,7 +165,7 @@ class TourCard extends StatelessWidget {
             const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
-                print('Navigate to booking for ${tour['city']}');
+                print('Navigate to booking for ${tour['_id']}');
               },
               child: const Text('Book Now'),
               style: ElevatedButton.styleFrom(

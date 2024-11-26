@@ -36,9 +36,7 @@ class _LoginPageState extends State<LoginPage> {
       if (response.statusCode == 200) {
         final responseData = jsonDecode(response.body);
         final token = responseData['data'];
-
         await SecureStorageService().saveToken(token);
-
         Navigator.pushReplacementNamed(context, '/dashboard');
       } else {
         final error = jsonDecode(response.body)['message'];
