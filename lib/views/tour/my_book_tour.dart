@@ -4,22 +4,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobile_app/config/secure_storage.dart';
 import 'package:http/http.dart' as http;
 
-class ToursPage extends StatefulWidget {
-  const ToursPage({Key? key}) : super(key: key);
+class MyBookTour extends StatefulWidget {
+  const MyBookTour({Key? key}) : super(key: key);
 
   @override
-  State<ToursPage> createState() => _ToursPageState();
+  State<MyBookTour> createState() => _MyBookTourState();
 }
 
-class _ToursPageState extends State<ToursPage> {
+class _MyBookTourState extends State<MyBookTour> {
   List<dynamic>? tours;
   bool isLoading = true;
   String errorMessage = '';
 
   Future<void> fetchTours() async {
     const apiUrl =
-        'https://backend-tour-booking-node-js-mongodb.onrender.com/api/v1/auth/get-tours';
-
+        'https://backend-tour-booking-node-js-mongodb.onrender.com/api/v1/auth/my-book-tour';
     setState(() {
       isLoading = true;
       errorMessage = '';

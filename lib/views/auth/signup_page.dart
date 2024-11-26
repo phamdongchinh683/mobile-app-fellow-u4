@@ -56,7 +56,8 @@ class _SignupPageState extends State<SignupPage> {
 
     try {
       final response = await http.post(
-        Uri.parse('http://localhost:8080/api/v1/auth/sign-up'),
+        Uri.parse(
+            'https://backend-tour-booking-node-js-mongodb.onrender.com/api/v1/auth/sign-up'),
         body: json.encode({
           'firstName': firstName,
           'lastName': lastName,

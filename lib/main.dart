@@ -2,10 +2,8 @@ import 'package:cloudinary_flutter/cloudinary_context.dart';
 import 'package:cloudinary_url_gen/cloudinary.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobile_app/views/auth/login_page.dart';
-import 'package:flutter_mobile_app/views/auth/profile_page.dart';
 import 'package:flutter_mobile_app/views/auth/signup_page.dart';
-import 'package:flutter_mobile_app/views/tour/book_tour_page.dart';
-import 'package:flutter_mobile_app/views/tour/tours_page.dart';
+import 'package:flutter_mobile_app/views/dashboard/dash_board.dart';
 
 void main() {
   CloudinaryContext.cloudinary =
@@ -30,8 +28,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/login': (context) => const LoginPage(),
         '/signup': (context) => const SignupPage(),
-        '/book-tour': (context) => const BookTourPage(),
-        '/profile': (context) => const ProfilePage(),
+        '/dashboard': (context) => const DashBoard(),
       },
     );
   }
